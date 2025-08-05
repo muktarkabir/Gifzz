@@ -4,8 +4,8 @@ searchBox.value = "Spider man";
 
 const fetchButton = document.querySelector("button");
 window.onload = fetchGif(searchBox.value,picture);
-fetchButton.addEventListener("click", () => {
-  if (searchBox.value == "") return;
+fetchButton.addEventListener("click", function () {
+  if (searchBox.value == "" || this.classList.contains("inactive")) return;
   fetchGif(searchBox.value, picture);
 });
 
@@ -21,6 +21,7 @@ function fetchGif(serchItem, img) {
     method: "GET",
   });
   img.src = "loading.webp";
+  fetchButton.classList.add("inactive");
 
   fetch(request)
     .then(function (response) {
@@ -35,9 +36,8 @@ function fetchGif(serchItem, img) {
       }
     })
     .then(function (response) {
-      console.log(response.meta);
-
       img.src = response.data.images.original.url;
+      fetchButton.classList.remove("inactive");
     })
     .catch(function (error) {
       console.log(error);

@@ -71,3 +71,7 @@ body {
     cursor: pointer;
   }
 }
+
+.inactive{
+  background-color: grey !important;
+}
