@@ -20,6 +20,8 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  flex-direction: column;
+  padding: 20px 0;
 }
 
 .frame {
@@ -34,11 +36,38 @@ body {
 }
 .attr {
   position: absolute;
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 12px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgb(0, 0, 0,0.2);
   bottom: 1%;
+  margin: 0 8px;
   p {
     font-weight: bold;
+  }
+}
+.search-box {
+  width: min(90%, 400px);
+  height: 2rem;
+  margin-top: 8px;
+  input {
+    width: 70%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-top: 1px solid orange;
+    box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.2);
+    padding-left: 8px;
+    margin-right: 16px;
+  }
+
+  button {
+    all: unset;
+    background-color: green;
+    color: white;
+    height: 100%;
+    padding: 0 8px;
+    box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.2);
+    border-radius: 8px;
   }
 }
