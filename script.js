@@ -5,12 +5,12 @@ const request = new Request(`${baseUrl}${params}`, {
   mode: "cors",
   method: "GET",
 });
-fetch(request)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (response) {
-    console.log(response);
+// fetch(request)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (response) {
+//     console.log(response);
 
-    img.src = response.data.images.original.url;
-  });
+//     img.src = response.data.images.original.url;
+//   });
