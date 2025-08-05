@@ -25,9 +25,8 @@ This project helped reinforce and practice several core JavaScript and frontend 
 * ✅ **Promises** — Used `.then()` and `.catch()` to handle asynchronous API responses
 * ✅ **Asynchronous Programming** — Used `fetch()` with `async` behavior and graceful error handling
 * ✅ **API Integration** — Built a query with URLSearchParams and connected to an external REST API
-* ✅ **DOM Manipulation** — Updated image and button states based on fetch events
-* ✅ **Form Validation & UX** — Disabled button during pending states, added loading indicators
-* ✅ **Responsive Layout** — Used `min()` and `aspect-ratio` CSS features for responsiveness
+* ✅ **Async/Await** — Handled promises with `async` and `await` in place of chaining `.then()`s
+* ✅ **Error Handling Using Try/Catch** — Properly handled errors using a `try` `catch` block 
 
 ## Screenshots
 
