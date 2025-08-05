@@ -3,7 +3,7 @@ const searchBox = document.querySelector("input");
 searchBox.value = "Spider man";
 
 const fetchButton = document.querySelector("button");
-window.onload = fetchGif(searchBox.value,picture);
+// window.onload = fetchGif(searchBox.value,picture);
 fetchButton.addEventListener("click", function () {
   if (searchBox.value == "" || this.classList.contains("inactive")) return;
   fetchGif(searchBox.value, picture);
@@ -27,7 +27,11 @@ function fetchGif(serchItem, img) {
     .then(function (response) {
       console.log(response.status);
       if (response.status != 200) {
-        throw new Error("re");
+        if (response.status == 429){
+          throw new Error(`${response.status} API rate limit exceeded`);
+          
+        }
+        throw new Error(`${response.status}`);
       }
       if (response.ok) {
         return response.json();
