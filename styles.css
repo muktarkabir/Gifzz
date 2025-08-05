@@ -28,7 +28,6 @@ body {
   width: min(90%, 400px);
   aspect-ratio: 1;
   border-radius: 10px;
-  border: 6px solid gold;
   img {
     width: 100%;
     aspect-ratio: 1;
