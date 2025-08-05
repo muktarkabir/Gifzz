@@ -3,7 +3,7 @@ const searchBox = document.querySelector("input");
 searchBox.value = "Spider man";
 
 const fetchButton = document.querySelector("button");
-// window.onload = fetchGif(searchBox.value,picture);
+window.onload = fetchGif(searchBox.value,picture);
 fetchButton.addEventListener("click", () => {
   if (searchBox.value == "") return;
   fetchGif(searchBox.value, picture);
