@@ -20,7 +20,7 @@ function fetchGif(serchItem, img) {
     mode: "cors",
     method: "GET",
   });
-  img.src = "loading.webp";
+  img.src = "assets/loading.webp";
   fetchButton.classList.add("inactive");
 
   fetch(request)
@@ -41,6 +41,7 @@ function fetchGif(serchItem, img) {
     })
     .catch(function (error) {
       console.log(error);
-      img.src = "localhost-file-not-found.jpg";
+      img.src = "assets/localhost-file-not-found.jpg";
+      fetchButton.classList.remove("inactive");
     });
 }
