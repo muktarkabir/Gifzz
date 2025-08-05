@@ -9,43 +9,37 @@ fetchButton.addEventListener("click", function () {
   fetchGif(searchBox.value, picture);
 });
 
-function fetchGif(serchItem, img) {
+async function fetchGif(serchItem, img) {
   const baseUrl = "https://api.giphy.com/v1/gifs/translate?";
   const params = new URLSearchParams({
     api_key: "ljAkFGcbOLgGmMiRpo50W7sZxNWYxlsv",
     s: serchItem,
-    weirdness: 8,
+    weirdness: 4,
   });
   const request = new Request(`${baseUrl}${params}`, {
     mode: "cors",
     method: "GET",
   });
-  img.src = "assets/loading.webp";
   fetchButton.classList.add("inactive");
+  img.src = "assets/loading.webp";
 
-  fetch(request)
-    .then(function (response) {
-      console.log(response.status);
-      if (response.status != 200) {
-        if (response.status == 429){
-          throw new Error(`${response.status} API rate limit exceeded`);
-          
-        }
-        throw new Error(`${response.status}`);
+  try {
+    const responseData = await fetch(request);
+    if (responseData.status != 200) {
+      if (responseData.status == 429) {
+        throw new Error(`${responseData.status} API rate limit exceeded`);
       }
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(`${response.status}`);
-      }
-    })
-    .then(function (response) {
-      img.src = response.data.images.original.url;
-      fetchButton.classList.remove("inactive");
-    })
-    .catch(function (error) {
-      console.log(error);
-      img.src = "assets/localhost-file-not-found.jpg";
-      fetchButton.classList.remove("inactive");
-    });
+      throw new Error(`${responseData.status}`);
+    }
+    const jsonData = await responseData.json();
+    if (jsonData.data.length == 0) {
+      throw new Error(`Nothing found`);
+    }
+    img.src = jsonData.data.images.original.url;
+    fetchButton.classList.remove("inactive");
+  } catch (error) {
+    console.error(error);
+    img.src = "assets/localhost-file-not-found.jpg";
+    fetchButton.classList.remove("inactive");
+  }
 }
