@@ -3,11 +3,12 @@ const searchBox = document.querySelector("input");
 searchBox.value = "Spider man";
 
 const fetchButton = document.querySelector("button");
-// window.onload = fetchGif(searchBox.value,picture);
+window.onload = fetchGif(searchBox.value,picture);
 fetchButton.addEventListener("click", function () {
   if (searchBox.value == "" || this.classList.contains("inactive")) return;
   fetchGif(searchBox.value, picture);
 });
+//TODO: Add download gif functionality.
 
 async function fetchGif(serchItem, img) {
   const baseUrl = "https://api.giphy.com/v1/gifs/translate?";
