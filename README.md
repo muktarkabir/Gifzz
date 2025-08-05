@@ -22,7 +22,7 @@
 
 This project helped reinforce and practice several core JavaScript and frontend concepts:
 
-* ✅ **Promises** — Used `.then()` and `.catch()` to handle async API responses
+* ✅ **Promises** — Used `.then()` and `.catch()` to handle asynchronous API responses
 * ✅ **Asynchronous Programming** — Used `fetch()` with `async` behavior and graceful error handling
 * ✅ **API Integration** — Built a query with URLSearchParams and connected to an external REST API
 * ✅ **DOM Manipulation** — Updated image and button states based on fetch events
@@ -31,21 +31,20 @@ This project helped reinforce and practice several core JavaScript and frontend 
 
 ## Screenshots
 
-1. ![Default App Load](assets/screenshots/loading.png)
+### Loading State
+![Default App Load](assets/screenshots/loading.png)
 
-2. ![Example Gif Display](assets/example-gif.jpg)
+### Fetched Gif Display
+![Example Gif Display](assets/screenshots/full-image.png)
 
+### Error feedback image
+![Error Feedback Display](assets/screenshots/error.png)
 
-3. ![Error Feedback Display](assets/screenshots/error.png)
-4. 
- ![Mobile View](assets/mobile-view.jpg)
-   *Fully responsive layout on smaller screens*
+### Mobile version
+![Mobile View](assets/screenshots/image.png)
 
 ## External Resources & Attribution
 
 * Background image by [Olga Izvekova](https://www.vecteezy.com/members/olga_izvekova) via Vecteezy
 * [Giphy API](https://developers.giphy.com/docs/api/)
 
----
-
-Let me know if you'd like to include deployment instructions, more screenshots, or improvements for future versions.
