@@ -3,7 +3,7 @@ const searchBox = document.querySelector("input");
 searchBox.value = "Spider man";
 
 const fetchButton = document.querySelector("button");
-window.onload = fetchGif(searchBox.value,picture);
+window.onload = fetchGif(searchBox.value, picture);
 fetchButton.addEventListener("click", function () {
   if (searchBox.value == "" || this.classList.contains("inactive")) return;
   fetchGif(searchBox.value, picture);
@@ -23,7 +23,6 @@ async function fetchGif(serchItem, img) {
   });
   fetchButton.classList.add("inactive");
   img.src = "assets/loading.webp";
-
   try {
     const responseData = await fetch(request);
     if (responseData.status != 200) {
@@ -37,10 +36,10 @@ async function fetchGif(serchItem, img) {
       throw new Error(`Nothing found`);
     }
     img.src = jsonData.data.images.original.url;
-    fetchButton.classList.remove("inactive");
   } catch (error) {
     console.error(error);
     img.src = "assets/localhost-file-not-found.jpg";
+  } finally {
     fetchButton.classList.remove("inactive");
   }
 }
